@@ -4,7 +4,7 @@ using namespace std;
 // count inversion
 
 int merge(vector<int>& arr, int low, int mid, int high) {
-    vector<int> temp;
+    vector<int> temp;   // SC : O(n)
     int count = 0;
     int left = low;
     int right = mid + 1;
@@ -73,6 +73,9 @@ void count_inverson(vector<int> &arr, int n){
     int count = 0;
     count = mergesort(arr, 0, n - 1);
     cout << "Optimized inversion count: " << count << endl;
+
+    // TC : O(n logn)
+    // SC : O(n)
 }
 
 
