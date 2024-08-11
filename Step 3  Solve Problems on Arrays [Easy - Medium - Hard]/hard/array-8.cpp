@@ -70,8 +70,6 @@ void merge_two_sorted(vector<int> &arr1, vector<int> &arr2)
     // TC : O(n1, n2) + O(n1 logm) + O(n2 logm)
     // SC : O(1)
 
-
-
     // optimal - 2
     // idea : gap method
     int n1 = arr1.size();
@@ -79,12 +77,12 @@ void merge_two_sorted(vector<int> &arr1, vector<int> &arr2)
     int len = n1 + n2;
     int gap = (len / 2) + (len % 2);
 
-    while (gap > 0)  //TC : O(log(len) base2)
+    while (gap > 0) // TC : O(log(len) base2)
     {
         int left = 0;
         int right = left + gap;
 
-        while (right < len)   //TC : O(len)
+        while (right < len) // TC : O(len)
         {
             // left poimter is in left array and right pointer is in right array
             if (left < n1 && right >= n1)
@@ -118,8 +116,8 @@ void merge_two_sorted(vector<int> &arr1, vector<int> &arr2)
 
 int main()
 {
-    vector<int> arr1 = {1, 3, 5, 7};
-    vector<int> arr2 = {0, 2, 6, 8, 9};
+    vector<int> arr1 = {1, 2, 3, 0, 0, 0};
+    vector<int> arr2 = {2, 5, 6};
     merge_two_sorted(arr1, arr2);
     cout << "arr1: ";
     for (int i : arr1)
@@ -136,3 +134,65 @@ int main()
     cout << endl;
     return 0;
 }
+
+// -------------------------
+// leetcode que
+/* You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively.
+
+Merge nums1 and nums2 into a single array sorted in non-decreasing order.
+
+The final sorted array should not be returned by the function, but instead be stored inside the array nums1.
+To accommodate this, nums1 has a length of m + n, where the first m elements denote the elements that should be merged,
+and the last n elements are set to 0 and should be ignored. nums2 has a length of n. */
+
+class Solution
+{
+private:
+    void swapGreater(vector<int> &a, vector<int> &b, int left, int right)
+    {
+        if (a[left] > b[right])
+        {
+            swap(a[left], b[right]);
+        }
+    }
+
+// here m and n are both same
+public:
+    void merge(vector<int> &a, int n, vector<int> &b, int m)
+    {
+        int len = n + m;
+        int gap = (len / 2) + (len % 2);
+        while (gap > 0)
+        {
+            int left = 0;
+            int right = left + gap;
+            while (right < len)
+            {
+                if (left < n && right >= n)
+                {
+                    swapGreater(a, b, left, right - n);
+                }
+                else if (left >= n)
+                {
+                    swapGreater(b, b, left - n, right - n);
+                }
+                else
+                {
+                    swapGreater(a, a, left, right);
+                }
+                left++;
+                right++;
+            }
+            if (gap == 1)
+                break;
+            gap = (gap / 2) + (gap % 2);
+        }
+
+        // This was the whole que about
+        int j = 0;
+        for (int i = n; i < len; i++)
+        {
+            a[i] = b[j++];
+        }
+    }
+};

@@ -18,8 +18,8 @@ void max_pro_subarray(vector<int> arr, int n){
     // TC : O(n^2)
     // SC : O(1)
 
-    // optimal
-    int maxi = INT_MIN;
+    // optimal - 1 (prefix and suffix)
+    /* int maxi = INT_MIN;
     int pre = 1;
     int suff = 1;
     for(int i = 0; i < n; i++){
@@ -36,7 +36,24 @@ void max_pro_subarray(vector<int> arr, int n){
         maxi = max(maxi, max(pre, suff));
     }
 
-    cout<<maxi;
+    cout<<maxi; */
+    // TC : O(n)
+    // SC : O(1)
+
+
+    // optimal - kadanes algo extended
+    int maxProd = arr[0];
+    int minProd = arr[0];
+    int result = arr[0];
+    for(int i = 1; i < n; i++){
+        int temp = max({arr[i], maxProd*arr[i], minProd*arr[i]});
+        minProd = min({arr[i], maxProd*arr[i], minProd*arr[i]});
+        maxProd = temp;
+
+        result = max(result, maxProd);
+    }
+    cout<<result;
+
     // TC : O(n)
     // SC : O(1)
 
@@ -46,7 +63,7 @@ void max_pro_subarray(vector<int> arr, int n){
 
 
 int main(){
-    vector<int> arr = {3, 2, -2, 4};
+    vector<int> arr = {1,2,-3,4,5,0};
     int n = arr.size();
     max_pro_subarray(arr, n);
 }
