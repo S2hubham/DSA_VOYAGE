@@ -42,7 +42,7 @@ int mergesort(vector<int>& arr, int low, int high) {
         return 0;
     }
 
-    int mid = low + (high - low) / 2;
+    int mid = (low + high) / 2;
     int count = 0;
     count += mergesort(arr, low, mid);
     count += mergesort(arr, mid + 1, high);
@@ -73,6 +73,9 @@ void count_inverson(vector<int> &arr, int n){
     int count = 0;
     count = mergesort(arr, 0, n - 1);
     cout << "Optimized inversion count: " << count << endl;
+
+    // TC : O(nlogn)
+    // SC : O()
 }
 
 
