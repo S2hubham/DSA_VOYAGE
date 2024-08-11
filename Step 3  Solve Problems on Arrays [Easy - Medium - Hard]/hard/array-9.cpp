@@ -74,13 +74,8 @@ void count_inverson(vector<int> &arr, int n){
     count = mergesort(arr, 0, n - 1);
     cout << "Optimized inversion count: " << count << endl;
 
-<<<<<<< HEAD
     // TC : O(nlogn)
     // SC : O()
-=======
-    // TC : O(n logn)
-    // SC : O(n)
->>>>>>> 1e3185162597949450f010fa35548082cc3fd8f7
 }
 
 
