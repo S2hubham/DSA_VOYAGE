@@ -52,7 +52,7 @@ void miss_and_repeat(vector<int> arr, int n){
 
     // optimal - 1
     // mathematical 
-    long long SN = (n* (n + 1)) / 2;
+    /* long long SN = (n* (n + 1)) / 2;
     long long S2N = (n* (n + 1) * (2 * n + 1)) / 6;
     long long S = 0;
     long long S2 = 0;
@@ -69,10 +69,54 @@ void miss_and_repeat(vector<int> arr, int n){
     x = (val1 + val2) / 2;
     y = x - val1;
 
-    cout<<"missing : "<<y<<"\nrepeating : "<<x;
+    cout<<"missing : "<<y<<"\nrepeating : "<<x; */
 
     // TC : O(n)
     // SC : O(1)
+
+
+    // optimal -2 
+    // idea : XOR
+    int xr = 0;
+    for(int i = 0 ; i < n; i++){
+        xr = xr ^ arr[i];
+        xr = xr ^ (i+1);
+    }
+
+    int number = xr & ~(xr - 1);
+    
+    int zero = 0;  //diff differentiating bit club
+    int one = 0;   //same differentiating bit club
+    // for array elements
+    for(int i = 0; i < n; i++){
+        if((arr[i] & number) != 0){
+            one = one ^ arr[i];
+        }
+        else{
+            zero = zero ^ arr[i];
+        }
+    }
+    // for sequential elements
+    for(int i = 1; i <= n; i++){
+        if((i & number) != 0){
+            one = one ^ i;
+        }
+        else{
+            zero = zero ^ i;
+        }
+    }
+
+    int count = 0;
+    for(int i = 0; i < n; i++){
+        if(arr[i] == zero) count++;
+    }
+    if(count == 2){
+        cout<<"missing : "<< one <<"\nrepeating : "<< zero ;
+    }
+    else{
+        cout<<"missing : "<< zero <<"\nrepeating : "<< one ;
+    }
+
 }
 
 int main()
@@ -83,3 +127,14 @@ int main()
     miss_and_repeat(arr, n1);
     return 0;
 }
+
+/* 
+
+-find xor of all array elements and sequential elements
+-find the diff bit
+-club the numbers in 0 and 1
+-xor all elements in o and 1 club 
+-manually check for repeating and missing
+
+
+ */
