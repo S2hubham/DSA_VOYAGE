@@ -58,7 +58,7 @@ void miss_and_repeat(vector<int> arr, int n){
 
     // optimal - 1
     // mathematical 
-    /* long long SN = (n* (n + 1)) / 2;
+    long long SN = (n* (n + 1)) / 2;
     long long S2N = (n* (n + 1) * (2 * n + 1)) / 6;
     long long S = 0;
     long long S2 = 0;
@@ -75,7 +75,7 @@ void miss_and_repeat(vector<int> arr, int n){
     x = (val1 + val2) / 2;
     y = x - val1;
 
-    cout<<"missing : "<<y<<"\nrepeating : "<<x; */
+    cout<<"missing : "<<y<<"\nrepeating : "<<x;
 
     // TC : O(n)
     // SC : O(1)
