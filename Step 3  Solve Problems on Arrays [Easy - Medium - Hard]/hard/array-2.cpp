@@ -2,6 +2,12 @@
 using namespace std;
 
 // majority elements II n/3
+
+// approach
+// 1 - count variable
+// 2 - hashing
+// 3 - extended moores voting algo
+
 void majority_II(int arr[], int n)
 {
     // brute force

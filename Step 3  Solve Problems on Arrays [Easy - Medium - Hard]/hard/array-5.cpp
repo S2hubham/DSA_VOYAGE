@@ -2,6 +2,12 @@
 using namespace std;
 
 // longest subarray with sum 0
+
+// approach
+// 1 - find all subarrays
+// 2 - hashing(presum, idx)
+
+
 void long_sub_0_sum(vector<int> arr, int n){
     // brute force 
     // idea : get all subarray and check for sum

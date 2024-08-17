@@ -3,6 +3,12 @@ using namespace std;
 
 // 3 sum problem
 
+// approach
+// 1 - three loops
+// 2 - haashing for third loop
+// 3 - three pointer approach
+
+
 void three_sum_prob(vector<int> arr){
     // brute force
     //idea : get all triplets by three loops 

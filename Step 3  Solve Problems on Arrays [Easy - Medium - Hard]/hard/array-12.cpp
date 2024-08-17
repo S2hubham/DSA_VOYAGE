@@ -1,6 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// approach
+// 1-count variable and iteration
+// 2-hashing
+// 3-two equation(mathematical) 
+// 4-xor method
+
 // find the missing number and repeating number
 void miss_and_repeat(vector<int> arr, int n){
     // brute force
@@ -75,7 +81,7 @@ void miss_and_repeat(vector<int> arr, int n){
     // SC : O(1)
 
 
-    // optimal -2 
+    // optimal - 2 (due to overflow in previous approach)
     // idea : XOR
     int xr = 0;
     for(int i = 0 ; i < n; i++){
@@ -117,6 +123,8 @@ void miss_and_repeat(vector<int> arr, int n){
         cout<<"missing : "<< zero <<"\nrepeating : "<< one ;
     }
 
+    // TC : O(3n)
+    // SC : O(1)
 }
 
 int main()

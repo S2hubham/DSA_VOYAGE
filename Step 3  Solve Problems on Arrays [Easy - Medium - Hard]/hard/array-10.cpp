@@ -3,6 +3,11 @@ using namespace std;
 
 
 // maximum product subarray
+
+// approach
+// 1 - find all sub-arrays 
+// 2 - prefix sum and suffix sum
+
 void max_pro_subarray(vector<int> arr, int n){
     // bettter
     /* int max_prod = INT_MIN;

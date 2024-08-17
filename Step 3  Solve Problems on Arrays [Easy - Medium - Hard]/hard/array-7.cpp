@@ -2,6 +2,11 @@
 using namespace std;
 
 // merge overlapping intervals
+
+// approach
+// 1 - sort , keep start and end variable and iterate through loop to change the end 
+// 2 - sort , form new pair(if empty or last element id less than curr) and change the end 
+
 void merge_overlap_interval(vector<vector<int>> arr, int n)
 {
     // brute

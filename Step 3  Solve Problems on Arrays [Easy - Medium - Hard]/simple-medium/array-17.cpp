@@ -2,6 +2,11 @@
 using namespace std;
 
 // number of subarray sum equals K
+
+// approach
+// 1 - find all subarrays
+// 2 - hashing(presum, count)
+
 void no_subarrray_with_sum_k(int arr[], int n, int k){
     // brute
     int count = 0;

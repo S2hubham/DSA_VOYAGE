@@ -2,6 +2,12 @@
 using namespace std;
 
 // 4 sum problem
+
+// aproach
+// 1 - four loops
+// 2 - haashing for fourth loop
+// 3 - two pointer approach
+
 void four_sum_prob(vector<int> arr, int target){
     // brute force 
     // idea : use four loops

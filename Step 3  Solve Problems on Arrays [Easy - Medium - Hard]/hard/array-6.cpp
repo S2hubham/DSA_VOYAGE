@@ -2,6 +2,11 @@
 using namespace std;
 
 // count number of subarray with XOR as K
+
+// approach
+// 1 - find all subarrays
+// 2 - keep map with x , count
+
 void XOR_K(vector<int> arr, int n, int k){
     // better
     // idea : xor

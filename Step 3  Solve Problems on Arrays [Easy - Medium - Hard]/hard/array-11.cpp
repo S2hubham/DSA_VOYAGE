@@ -4,6 +4,10 @@ using namespace std;
 // Reverse pairs
 // arr[i] > 2 * arr[j] 
 
+// approach
+// 1 - two loops 
+// 2 - count pairs + merge sort
+
 
 void merge(vector<int>& arr, int low, int mid, int high) {
     vector<int> temp;   // SC : O(n)

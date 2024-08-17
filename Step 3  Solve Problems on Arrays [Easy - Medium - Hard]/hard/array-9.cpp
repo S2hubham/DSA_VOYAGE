@@ -2,6 +2,11 @@
 using namespace std;
 
 // count inversion
+// arr[i] > arr[i+1]
+
+// approach
+// 1 - two loops for iteration
+// 2 - count varaible + merge sort
 
 int merge(vector<int>& arr, int low, int mid, int high) {
     vector<int> temp;   // SC : O(n)

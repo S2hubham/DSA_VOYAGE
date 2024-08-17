@@ -3,6 +3,10 @@ using namespace std;
 
 // merge two sorted arrays without using extra space
 
+// approach
+// 1 - keep temp vector array
+// 2 - gap method
+
 void swapGreater(vector<int> &arr1, vector<int> &arr2, int left, int right)
 {
     if (arr1[left] > arr2[right])
