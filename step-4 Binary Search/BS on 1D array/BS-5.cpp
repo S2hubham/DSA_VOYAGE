@@ -1,15 +1,27 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-// search in rotated sorted array
-void search_rot_sorted_array(vector<int> arr, int n, int target){
+
+// search in rotated sorted array(duplicates)
+// edge case : arr[low] == arr[mid] == arr[high]
+
+void search_rot_sorted_array2(vector<int> arr, int n, int target){
     int low = 0, high = n-1;
     while(low <= high){
         int mid = (low + high) / 2; 
+
         if(arr[mid] == target){
-            cout<<"Found at index : "<<mid;
+            cout<<"true";
             return;
         }
+
+        // check for dupliactes
+        if(arr[low] == arr[mid] && arr[mid] == arr[high]){
+            low = low + 1;
+            high = high - 1;
+            continue;
+        }
+
         // left portion is sorted
         if(arr[low] <= arr[mid]){
             if(arr[low] <= target && target <= arr[mid]){
@@ -29,32 +41,15 @@ void search_rot_sorted_array(vector<int> arr, int n, int target){
             }
         }
     }
-    cout<<"not found";
+    cout<<"false";
 
-    // TC : O(logn base2)
-    // SC : O(1)
+    // avg TC : O(logn base2)
+    // worst TC : O(n/2)
 }
-
 
 int main(){
-    vector<int> arr = {7, 8, 9, 1, 2, 3, 4, 5, 6};
+    vector<int> arr = {3, 3, 1, 3, 3, 3, 3};
     int n = arr.size();
     int x = 8;
-    search_rot_sorted_array(arr, n, 1);
+    search_rot_sorted_array2(arr, n, 1);
 }
-
-
-
-/* 
-
-algo
-
-find mid
-check if mid == target
-find the sorted portion (left or right)
-    check whether the target lies within the sorted portion before searching for target
-        if yes shift the low or high accordingly
-        if no shift the low or high accordingly
-
-
- */
