@@ -2,7 +2,7 @@
 using namespace std;
 
 
-// finding sqrt of given number using binary search in an sorted array(range 1 to val)
+// finding sqrt of given number using binary search
 
 int sqrt_element(int val){
     // brute force
