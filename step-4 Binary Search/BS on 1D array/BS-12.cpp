@@ -54,9 +54,3 @@ int main(){
     //     cout<<it<<endl;
     // }
 }
-
-
-
-// edge case
-// 1 5 1 2 1
-// here we can eleminate any part so that we can get the peak
