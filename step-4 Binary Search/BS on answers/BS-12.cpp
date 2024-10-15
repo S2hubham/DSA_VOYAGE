@@ -47,38 +47,26 @@ int median(vector<int> arr1, vector<int> arr2)
     while(i < n1 && j < n2){
         if(arr1[i] <= arr2[j]){
             if(cnt == idx1) idx1el = arr1[i];
-            if(cnt == idx2){
-                idx2el = arr1[i]; 
-                break;
-            }  
+            if(cnt == idx2) idx2el = arr1[i];
             cnt++;
             i++;
         }
         else{
             if(cnt == idx1) idx1el = arr2[j];
-            if(cnt == idx2){ 
-                idx2el = arr2[j]; 
-                break;
-            }
+            if(cnt == idx2) idx2el = arr2[j]; 
             cnt++;
             j++;
         }
     }
     while(i < n1){
         if(cnt == idx1) idx1el = arr1[i];
-        if(cnt == idx2){ 
-            idx2el = arr1[i]; 
-            break;
-        }
+        if(cnt == idx2) idx2el = arr1[i]; 
         cnt++;
         i++;
     }
     while(j < n2){
         if(cnt == idx1) idx1el = arr2[j];
-        if(cnt == idx2){ 
-            idx2el = arr2[j];
-            break;
-        }
+        if(cnt == idx2) idx2el = arr2[j];
         cnt++;
         j++;
     }
