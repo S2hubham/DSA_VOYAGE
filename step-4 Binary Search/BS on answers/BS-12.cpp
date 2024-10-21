@@ -110,7 +110,7 @@ int median(vector<int> arr1, vector<int> arr2)
     }
     return -1;
 
-    // TC : O(min(n1, n2))
+    // TC : O(log(min(n1, n2)))
     // SC : O(1)
 }
 
