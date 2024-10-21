@@ -74,7 +74,7 @@ int k_element(vector<int> arr1, vector<int> arr2, int k)
     }
     return -1;
 
-    // TC : O(log(min(n1, n2)))
+    // TC : O(log(min(n1, n2d)))
 }
 
 int main()
