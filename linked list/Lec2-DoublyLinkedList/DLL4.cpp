@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include<stack>
 using namespace std;
 
 // Reverse a DLL
@@ -73,13 +74,38 @@ Node* reverseDLL(Node* head) {
     return newHead;
 }
 
+
+void reverseDoublyLinkedListUsingStack(Node*& head) {
+    if (head == nullptr) return; 
+
+    stack<int> st;
+    Node* temp = head;
+
+    // Push all nodes onto the stack
+    while (temp != NULL) {
+        st.push(temp->data);
+        temp = temp->next;
+    }
+
+    // Step 2: Traverse the list again and replace node data
+    temp = head;
+    while (temp != NULL) {
+        temp->data = st.top(); // Pop data and assign it to the current node
+        st.pop();
+        temp = temp->next;
+    }
+}
+
+
 int main() {
     vector<int> arr = {1, 2, 3, 4, 6};
     Node *head = constructLL(arr);
 
     printLinkedList(head);
 
-    head = reverseDLL(head);
+    // head = reverseDLL(head);
+
+    reverseDoublyLinkedListUsingStack(head);
 
     printLinkedList(head);
 
