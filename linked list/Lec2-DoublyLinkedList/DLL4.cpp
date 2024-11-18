@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-// Insertion logic build
+// Reverse a DLL
 
 class Node {
 public:
