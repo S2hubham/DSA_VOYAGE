@@ -59,7 +59,7 @@ bool detectloop(Node* head){
     unordered_map<Node*, int> mpp;
     Node* temp = head;
     while(temp != NULL){
-        if(mpp.find(temp) == mpp.end()){
+        if(mpp.find(temp) != mpp.end()){
             return true;
         }
         mpp[temp] = 1;
