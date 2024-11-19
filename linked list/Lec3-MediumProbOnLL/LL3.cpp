@@ -2,7 +2,7 @@
 using namespace std;
 
 
-// Reverse a LL
+// Detect a loop LL
 
 class Node
 {
@@ -54,7 +54,6 @@ void printLinkedList(Node *head)
 }
 
 
-// Iterative 
 bool detectloop(Node* head){
     unordered_map<Node*, int> mpp;
     Node* temp = head;
