@@ -30,8 +30,7 @@ vector<vector<int>> combinationSum3(int k, int n) {
 
 
 int main(){
-    vector<int> arr = {1, 2, 2};
-    vector<vector<int>> ans = subset_sum_2(arr);
+    vector<vector<int>> ans = combinationSum3(3, 9);
     for (int i = 0; i < ans.size(); i++){
         if (ans[i].empty()){                 
             cout << "{}"; 
