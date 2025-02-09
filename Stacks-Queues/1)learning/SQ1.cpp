@@ -70,8 +70,10 @@ public:
         if(currsize == 1){
             start = end = -1;
         }
+        else{
+            start = (start + 1) % SIZE;
+        }
         cout<<"Last element is deleted: " << ele << endl;
-        start = (start + 1) % SIZE;
         currsize -= 1;
     }
 
