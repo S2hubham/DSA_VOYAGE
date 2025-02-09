@@ -93,7 +93,7 @@ public:
     }
 
     // TC : O(1)
-    // SC : O(2n) ~= O(n)
+    // SC : O(n)
 };
 
 int main(){
@@ -109,3 +109,8 @@ int main(){
     st.getmini();
     return 0;
 }
+
+
+
+// NOTE : this below approach is better in TC but unable to handle -ve values
+// hence go with above approach as it will work irrespective of sign of val
