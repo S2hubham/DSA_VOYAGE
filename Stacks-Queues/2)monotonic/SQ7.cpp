@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+#define MOD (int)(1e9 + 7)
 
 // sum of subarray minimums
 vector<int> findnse(vector<int> arr){
@@ -59,13 +59,13 @@ void sum_subarray_min(vector<int> arr){
     // better
     vector<int> nse = findnse(arr);
     vector<int> pse = findpse(arr);
-    int total = 0;
+    long long total = 0;
     for(int i = 0; i < arr.size(); i++){
-        int left = arr[i] - pse[i];
-        int right = nse[i] - arr[i];
-        total += (left * right * arr[i]);
+        long left = arr[i] - pse[i];
+        long right = nse[i] - arr[i];
+        total = (total + (left * right % MOD) * arr[i] % MOD) % MOD;
     }
-    cout<<"Total : "<<total;
+    cout<<"Total : "<<(int)(total % MOD);
 
     // TC : O(5n)
     // SC : O(2n)
