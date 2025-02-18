@@ -61,8 +61,8 @@ void sum_subarray_min(vector<int> arr){
     vector<int> pse = findpse(arr);
     long long total = 0;
     for(int i = 0; i < arr.size(); i++){
-        long left = arr[i] - pse[i];
-        long right = nse[i] - arr[i];
+        long left = i - pse[i];
+        long right = nse[i] - i;
         total = (total + (left * right % MOD) * arr[i] % MOD) % MOD;
     }
     cout<<"Total : "<<(int)(total % MOD);
