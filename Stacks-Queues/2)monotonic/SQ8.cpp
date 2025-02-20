@@ -111,7 +111,7 @@ void sum_subarray_ranges(vector<int> arr){
         int rightmin = nse[i] - i;
         int totalmax = leftmax * rightmax * arr[i];
         int totalmin = leftmin * rightmin * arr[i];
-        total += totalmax + totalmin;
+        total += totalmax - totalmin;
     }
 
     cout<<"Total : "<<total;
