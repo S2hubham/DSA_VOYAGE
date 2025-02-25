@@ -41,8 +41,6 @@ string rem_k_dig(string num, int k)
     ans = (lead == ans.size()) ? "0" : ans.substr(lead);
 
 
-    // edge case 4 : after removing trailing zeros and  reversing the string, its becomes empty
-    if(ans.empty()) return "0";
     return ans;
 
     // TC : O(2n)
