@@ -59,3 +59,26 @@ int main()
 }
 
 // understand the for of solving 
+/* 
+ALGO : 
+Check if num.size() == k. If true, return "0".
+
+Initialize an empty stack st to store digits.
+
+Iterate through each character num[i]:
+
+While the stack is not empty, k > 0, and st.top() > num[i], pop from the stack and decrement k.
+Push num[i] into the stack.
+If k > 0 after iteration, pop k remaining elements from the stack.
+
+If the stack is empty, return "0".
+
+Build the result string ans by popping all elements from the stack.
+
+Reverse the string ans.
+
+Remove leading zeros from ans.
+
+If ans becomes empty after trimming, return "0"; otherwise, return ans.
+
+*/
