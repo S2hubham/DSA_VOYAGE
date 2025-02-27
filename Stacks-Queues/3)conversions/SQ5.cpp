@@ -2,25 +2,6 @@
 using namespace std;
 
 // Postfix to Prefix
-string reverse(string s){
-    string rev;
-    for(int i = s.size()-1; i >= 0; i--){
-        char c = s[i];
-        if(isalnum(c)){
-            rev += c;
-        }
-        else if(c == '('){
-            rev += ')';
-        }
-        else if(c == ')'){
-            rev += '(';
-        }
-        else{
-            rev += c;
-        }
-    }
-    return rev;
-}
 
 void Postfix_Prefix(string exp)
 {
