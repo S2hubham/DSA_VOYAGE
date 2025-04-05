@@ -71,3 +71,41 @@ int main(){
     cout<<"Maximum number of substring containing all three characters : \n"<<func(s);
     return 0;
 }
+
+
+
+
+/* 
+
+basic intuition for optimal
+
+We want to count how many substrings end at each position that contain at least one 'a', one 'b', and one 'c'.
+So, as we go through the string:
+We remember the last positions where we saw:
+'a' → chars[0]
+'b' → chars[1]
+'c' → chars[2]
+
+At any point, if we've seen all three characters at least once, then we can form some valid substrings that end at the current character.
+===The earliest of the last seen 'a', 'b', and 'c' tells us the furthest back we can start the substring and still include all three.===
+So, the number of such substrings is just:
+👉 window + 1
+(because we can start from index 0 up to window)
+
+📦 Example:
+Let’s take s = "abc":
+At i = 0: we see 'a' → not enough info.
+At i = 1: we see 'b' → still missing 'c'.
+At i = 2: we see 'c' → now we’ve seen 'a', 'b', and 'c'!
+
+Last seen positions:
+'a' → 0
+'b' → 1
+'c' → 2
+
+The earliest of these is 0 → So we can start from index 0, and form 1 valid substring:
+"abc" → ends at i = 2, starts at index 0
+So: cnt += 0 + 1 = 1
+
+
+*/
