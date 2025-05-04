@@ -36,6 +36,15 @@ void itr_inorder_traversal(Node* root){
 
     // TC : O(n)
     // SC : O(n)
+
+
+    /* 
+    
+    1.if node present push current node on stack and go left
+    2.else move node to correct position by taking element from stack and del it then go right (repeat step1 / step2)
+    3.stop condn -> of node and stack elements both are absent stop
+    
+    */
 }
 
 
