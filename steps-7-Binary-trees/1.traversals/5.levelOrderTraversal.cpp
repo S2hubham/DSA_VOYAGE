@@ -16,8 +16,10 @@ struct Node{
 
 
 vector<vector<int>> BFS(Node* node){
-    queue<Node*> q;
     vector<vector<int>> ans;
+    if(node == NULL)    return ans;
+
+    queue<Node*> q;
     q.push(node);
     while(!q.empty()){
         vector<int> level;
@@ -35,6 +37,9 @@ vector<vector<int>> BFS(Node* node){
         ans.push_back(level);
     }
     return ans;
+
+    // TC : O(n)
+    // SC : O(n/2 + n)   queue + ans 
 }
 
 
