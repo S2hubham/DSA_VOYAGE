@@ -22,10 +22,11 @@ int func(Node* root, int &maxi){
     int leftsum = func(root->left, maxi);
     int rightsum = func(root->right, maxi);
 
-    maxi = max(maxi, leftsum + root->data + rightsum);  // this is to keep the max path
-
     if(leftsum < 0) leftsum = 0;
     if(rightsum < 0)    rightsum = 0;
+
+    maxi = max(maxi, leftsum + root->data + rightsum);  // this is to keep the max path
+
     return (root->data + max(leftsum, rightsum));  // return only best path with above optimisation
 
     // TC : O(n)
