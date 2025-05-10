@@ -21,9 +21,9 @@ int balanced(Node* root){
         return 0;
     }
 
-    int l = height(root->left);
+    int l = balanced(root->left);
     if(l == -1)   return -1;
-    int r = height(root->right);
+    int r = balanced(root->right);
     if(r == -1)   return -1;
 
     // check for balance
@@ -34,7 +34,7 @@ int balanced(Node* root){
 
 
 int main(){
-    Node* root = new Node(1);
+    /* Node* root = new Node(1);
     root->left = new Node(2);
     root->left->left = new Node(4); 
     root->left->right = new Node(5); 
@@ -44,11 +44,19 @@ int main(){
     root->right->left = new Node(6); 
     root->right->right = new Node(7);
     root->right->right->left = new Node(9);  
-    root->right->right->right = new Node(10); 
+    root->right->right->right = new Node(10);  */
+
+
+    Node* root = new Node(3);
+    root->left = new Node(9);
+
+    root->right = new Node(20);
+    root->right->left = new Node(4); 
+    root->right->right = new Node(5);
 
     int ans = balanced(root);
 
-    cout << ((ans < 0) ? "Tree is balanced" : "Tree is not balanced");
+    cout << ((ans != -1) ? "Tree is balanced" : "Tree is not balanced");
 
     return 0;
 }
