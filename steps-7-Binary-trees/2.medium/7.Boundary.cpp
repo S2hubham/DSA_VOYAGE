@@ -2,7 +2,7 @@
 using namespace std;
 
 
-// ZigZag Binary Tree
+// Boundary of Binary Tree
 struct Node{
     int data;
     Node* left;
@@ -79,7 +79,7 @@ vector<int> boundary(Node* root){
 
 
 int main(){
-    Node* root = new Node(1);
+    /* Node* root = new Node(1);
     root->left = new Node(2);
     root->left->left = new Node(4); 
     root->left->right = new Node(5); 
@@ -89,7 +89,25 @@ int main(){
     root->right->left = new Node(6); 
     root->right->right = new Node(7);
     root->right->right->left = new Node(9);  
-    root->right->right->right = new Node(10);   
+    root->right->right->right = new Node(10);  */  
+
+
+    Node* root = new Node(1);
+    root->left = new Node(2);
+    root->left->left = new Node(3);
+    root->left->left->left = new Node(100);
+    root->left->left->right = new Node(4); 
+    root->left->left->right->left = new Node(5);
+    root->left->left->right->right = new Node(6);
+    root->left->left->right->right->left = new Node(600);  
+    root->left->left->right->right->right = new Node(700); 
+
+    root->right = new Node(7);
+    root->right->right = new Node(8); 
+    root->right->right->left = new Node(9);
+    root->right->right->left->left = new Node(10);  
+    root->right->right->left->right = new Node(11); 
+
 
     vector<int> ans = boundary(root);
 
