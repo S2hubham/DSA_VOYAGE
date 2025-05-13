@@ -85,3 +85,15 @@ int main(){
       
     return 0;
 }
+
+
+/* 
+
+Top-Down Enforcement (Before Recursion):
+    If a parent’s data is greater than the sum of its children, then push the parent's value down to the children (increase child values).
+    This avoids violating the constraint when you later update the parent using children's values.
+Bottom-Up Fix (After Recursion):
+    After recursive calls, the children will already satisfy the children sum property, so you can safely set:
+        root->data = left + right;
+
+*/
