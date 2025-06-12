@@ -22,8 +22,8 @@ int height1(Node* root){
         return 0;
     }
 
-    int l = height(root->left);
-    int r = height(root->right);
+    int l = height1(root->left);
+    int r = height1(root->right);
 
     return (1 + max(l, r));
 }
@@ -65,7 +65,7 @@ int main(){
     root->right->right->left = new Node(9);  
     root->right->right->right = new Node(10); 
 
-    cout<<"Max height of tree is : "<<height2(root);
+    cout<<"Max height of tree is : "<<height1(root);
     
     return 0;
 }
