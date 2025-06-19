@@ -15,13 +15,13 @@ struct Node{
 };
 
 
-void func(unordered_map<int, int> &mapInRoot, vector<int> inorder){
+void func(unordered_map<int, int> &mapInRoot, vector<int> &inorder){
     for(int i = 0; i < inorder.size(); i++){
         mapInRoot[inorder[i]] = i;
     }
 }
 
-Node* createTree(vector<int> inorder, int instart, int inend, vector<int> preorder, int prestart, int preend, unordered_map<int, int> &mapInRoot){
+Node* createTree(vector<int> &inorder, int instart, int inend, vector<int> &preorder, int prestart, int preend, unordered_map<int, int> &mapInRoot){
     // base case
     if(prestart > preend || instart > inend)    return NULL;
 
