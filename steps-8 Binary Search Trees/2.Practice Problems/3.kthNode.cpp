@@ -58,7 +58,7 @@ int kthSmallest(Node* root,  int k){
 
 // Recursive inorder
 void inorder(Node* root, int &counter, int &ans, int k){
-    if(!root)   return;
+    if(!root || counter > k)   return;
 
     inorder(root->left, counter, ans, k);
 
