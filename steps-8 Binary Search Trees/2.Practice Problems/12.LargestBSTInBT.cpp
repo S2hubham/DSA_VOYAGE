@@ -2,7 +2,7 @@
 using namespace std;
 
 
-// BST Iterator
+// Largest BST in BT
 struct Node{
     int data;
     Node* left;
@@ -36,13 +36,13 @@ private :
         auto right = largestBSTSubTreeHelper(root->right);
 
         if(left.largest < root->data  && root->data < right.smallest){
-            return NodeValue((left.size + right.size + 1), max(root->data, right.largest), max(root->data, left.smallest));
+            return NodeValue((left.size + right.size + 1), max(root->data, right.largest), min(root->data, left.smallest));
         }
         else{
             return NodeValue(max(left.size, right.size), INT_MAX, INT_MIN);
         }
     }
-public : 
+public :    
     int largestBSTSubtree(Node* root){
         return largestBSTSubTreeHelper(root).size;
     }
