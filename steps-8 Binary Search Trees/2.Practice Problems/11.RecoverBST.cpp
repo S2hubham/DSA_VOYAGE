@@ -2,7 +2,7 @@
 using namespace std;
 
 
-// BST Iterator
+// Recover a BST
 struct Node{
     int data;
     Node* left;
